@@ -2,7 +2,7 @@
 // @name         42 User Location
 // @namespace    776303e5-70e8-49a3-cb7f-f036c47f1a9b
 // @version      0.1
-// @description  Add user location in cluster in profile.
+// @description  Add the map of the cluster in the profile page and highlight the position of the user.
 // @author       rpinto-r
 // @match        https://profile.intra.42.fr/users/*
 // @icon         https://icons.duckduckgo.com/ip3/42.fr.ico
