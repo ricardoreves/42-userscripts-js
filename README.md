@@ -11,7 +11,7 @@ It requires the installation of an extension specific to your browser. These ext
 
 #### 👤 Install userscripts
 Now that you have installed the extension, you can install one of the scripts below.
-- [42 User Location](https://github.com/ricardoreves/42-userscripts-js/scripts/raw/master/42-user-location.user.js): Add the map of the cluster in the profile page and highlight the position of the user.
+- [42 User Location](https://github.com/ricardoreves/42-userscripts-js/raw/master/scripts/42-user-location.user.js): Add the map of the cluster in the profile page and highlight the position of the user.
 
 *⚠️ For the moment this script only works for [42 Lausanne](https://www.42lausanne.ch/)* 
 ![](https://via.placeholder.com/1080x720.png?text=Coming%20soon...)
