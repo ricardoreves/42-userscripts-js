@@ -2,11 +2,11 @@
 // @name         42 User Location
 // @namespace    776303e5-70e8-49a3-cb7f-f036c47f1a9b
 // @version      0.1
-// @description  Add the map of the cluster in the profile page and highlight the position of the user.
+// @description  Add user location in cluster in profile.
 // @author       rpinto-r
-// @match        https://profile.intra.42.fr/users/*
+// @match        https://profile.intra.42.fr/*
 // @icon         https://icons.duckduckgo.com/ip3/42.fr.ico
-// @downloadURL  https://github.com/ricardoreves/42-userscripts-js/raw/master/scripts/42-user-location.user.js
+// @downloadURL  https://github.com/ricardoreves/42-userscripts-js/scripts/raw/master/42-user-location.user.js
 // @grant        none
 // ==/UserScript==
 
@@ -15,6 +15,10 @@
     'use strict';
     try
     {
+        const actions = document.querySelector(".button-actions");
+        if (actions)
+            actions.insertAdjacentHTML('beforeend', `<a href="https://meta.intra.42.fr/clusters"><span class="icon iconf-map-location padding-5 padding-left-10 padding-right-10" data-placement="bottom" data-toggle="tooltip" title="" data-original-title="Clusters"></span>
+</a>`);
         const element = document.querySelector(".user-poste-infos");
         const poste = element.innerText;
         const clusters = [{
