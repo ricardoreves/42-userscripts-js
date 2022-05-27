@@ -1,20 +1,35 @@
 // ==UserScript==
 // @name         42 User Location
 // @namespace    776303e5-70e8-49a3-cb7f-f036c47f1a9b
-// @version      0.1
+// @version      0.2
 // @description  Add user location in cluster in profile.
 // @author       rpinto-r
 // @match        https://profile.intra.42.fr/*
 // @icon         https://icons.duckduckgo.com/ip3/42.fr.ico
 // @downloadURL  https://github.com/ricardoreves/42-userscripts-js/scripts/raw/master/42-user-location.user.js
-// @grant        none
+// @grant        GM.xmlHttpRequest
 // ==/UserScript==
 
 (async () =>
-{
+ {
     'use strict';
     try
     {
+        const getSVGcontent = (url) =>
+        {
+            return new Promise((resolve, reject) => {
+                GM.xmlHttpRequest({
+                    method: "GET",
+                    url: cluster.mapUrl,
+                    onload: (response) => {
+                        resolve(response.responseText);
+                    },
+                    onerror: (error) => {
+                        reject(error);
+                    }
+                });
+            });
+        }
         const actions = document.querySelector(".button-actions");
         if (actions)
             actions.insertAdjacentHTML('beforeend', `<a href="https://meta.intra.42.fr/clusters"><span class="icon iconf-map-location padding-5 padding-left-10 padding-right-10" data-placement="bottom" data-toggle="tooltip" title="" data-original-title="Clusters"></span>
@@ -35,12 +50,11 @@
         if (poste === "-")
             return;
         const cluster = clusters.find(item => item.id == poste.slice(0, 2));
-        const res = await fetch(cluster.mapUrl);
-        const svgText = await res.text();
+        const svgText = await getSVGcontent(cluster.mapUrl);
         const parser = new DOMParser();
         const svg = parser.parseFromString(svgText, "image/svg+xml");
         svg.querySelectorAll(`rect, image, text`).forEach(el =>
-        {
+                                                          {
             if (el.nodeName === "rect" && el.id === poste)
             {
                 const h = +el.getAttribute('height');
