@@ -2,11 +2,11 @@
 // @name         42 User Location
 // @namespace    776303e5-70e8-49a3-cb7f-f036c47f1a9b
 // @version      0.2
-// @description  Add user location in cluster in profile.
+// @description  Display the location of the student on his profile.
 // @author       rpinto-r
 // @match        https://profile.intra.42.fr/*
 // @icon         https://icons.duckduckgo.com/ip3/42.fr.ico
-// @downloadURL  https://github.com/ricardoreves/42-userscripts-js/scripts/raw/master/42-user-location.user.js
+// @downloadURL  https://github.com/ricardoreves/42-userscripts-js/raw/master/scripts/42-user-location.user.js
 // @grant        GM.xmlHttpRequest
 // ==/UserScript==
 
