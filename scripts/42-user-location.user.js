@@ -46,6 +46,11 @@
             name: "Asgard",
             door: "360,70,380,70,370,80",
             mapUrl: "https://cdn.intra.42.fr/cluster/image/90/c2-1.svg"
+        }, {
+            id: "c3",
+            name: "Salle sur Demande",
+            door: "300,20,320,20,310,30",
+            mapUrl: "https://cdn.intra.42.fr/cluster/image/133/c3.svg"
         }];
         if (poste === "-")
             return;
